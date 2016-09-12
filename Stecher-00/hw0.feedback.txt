@@ -1,0 +1,77 @@
+17 pts
+
+Zach,
+
+- You showed a nice proof that you have all the necessary setup for python.
+
+- You showed a nice proof that you have a GitHub account and that you added me as a
+  collaborator.
+
+- You provided a nice proof that you created a Kaggle account.
+
+About the problems:
+1. 
+You have the correct answer and a good explanation.
+
+2. 
+You have a correct answer and a good explanation.
+
+3.(a)
+You have a very good explanation.
+
+3.(b)
+You have the correct answer and a very good explanation.
+You did not provide Python code to support your answer. -1pt
+
+3.(c) 
+You provided a correct answer and a good explanation.
+You did not provide Python code to support your answer.
+
+4. Gaussian
+The answer you provided is not complete. -1pt
+
+4. Multivariate Gaussian
+You provided the correct multivariate Gaussian formula.
+
+4. Bernoulli
+The formula you provided is correct.
+
+4. Binomial
+You provided the correct binomial distribution equation.
+
+4. Exponential
+The formula you provided is correct.
+
+5.
+The explanation provided is not 100\% accurate.
+
+6.
+The answer you provided is not correct. -1pt
+
+7.(a)
+You provided the correct answer.
+
+7.(b)
+The picture you provided is not the best, but it is legible nonetheless.
+
+8.(a)
+You did not provide an answer. -1pt
+
+8.(b)
+You did not provide an answer. -1pt
+
+8.(c)
+You did not provide an answer. 
+
+8.(d)
+You did not provide an answer. 
+
+About your $\LaTeX$ work:
+- It seems like you put a lot of effort on it. 
+
+Overall a great job!
+
+
+Peace,
+
+- Dr. Pablo Rivas
