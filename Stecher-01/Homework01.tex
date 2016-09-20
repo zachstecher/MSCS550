@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{Homework 01}
+\author{Zach Stecher}
+\date{Due: 9/20/16}
+
+\begin{document}
+\lstset{language=Python}
+
+\maketitle
+
+\section*{Problem 1.2}
+\subsection*{1.2a)}
+
+We know that the regions represented h(x) = +1 and h(x) = -1 can be seperated by a line because h(x) = 0 seperates the two reasons, so the line that seperates the two regions is h(x) = 0.
+\\
+
+h(x) = 0 can be represented as:
+
+\begin{equation}
+	x_0w_0 + x_1w_1 + x_2w_2 = 0
+\end{equation}
+\\
+
+By moving some of the equation to the other side, we end up with:
+
+\begin{equation}
+	x_2 = \frac{-w_0 - x_1w_1}{w_2}
+\end{equation}
+
+From there, if we move $-w_0$ to the end and split this side of the equation up for clarity, we get:
+
+\begin{equation}
+	x_2 = \frac{-x_1w_1}{w_2} - \frac{w_0}{w_2}
+\end{equation}
+
+So using $y = mx + b$ where $m$ is the slope and $b$ is the intersect, in terms of $w$ and $x$ the slope is $\frac{-x_1}{w_2}$ and the intersect is $\frac{-w_0}{w_2}$.
+\\
+
+\subsection*{1.2b Draw figures for cases w = [1, 2, 3] and w = -[1, 2, 3]}
+\begin{figure}
+	\includegraphics{12bpos.png}
+	\caption{With positive weight values.}
+\end{figure}
+
+\begin{figure}
+	\includegraphics{12bneg.png}
+	\caption{With negative weight values}.
+\end{figure}
+\newpage
+
+\section*{Problem 1.4}
+
+For all sections of problem 1.4, we used a provided base version of the Perceptron learning algorithm with small modifications.
+
+\subsection*{1.4a}
+
+For this section, the Perceptron was called on a deta set size 20 by the following code:
+
+\begin{lstlisting}[frame=single]
+p = Perceptron(20)
+p.plot()
+\end{lstlisting}
+
+\begin{figure}[!htb]
+	\includegraphics{14a.png}
+	\caption{The final hypothesis $h(g)$.}
+\end{figure}
+\newpage
+
+\subsection*{1.4b}
+
+For this section, we ran the Perceptron algorithm again on a data set with a size of 20, taking note of the number of iterations necessary to reach $h(g)$. For this instance, we ended up with 17 iterations to reach $h(g)$.
+The code was modified to save all iterations as .png files:
+
+\begin{lstlisting}[frame=single]
+p = Perceptron(20)
+p.pla(save=True)
+p.plot()
+\end{lstlisting}
+
+\begin{figure}[!htb]
+	\includegraphics{14b.png}
+	\caption{The final hypothesis $h(g)$ after 17 iterations.}
+\end{figure}
+\newpage
+
+\subsection*{1.4c Run the Perceptron again with a data set size of 20 and compare results with 1.4b}
+
+This time the Perceptron algorithm only required 14 iterations to find $h(g)$. The code was not modified at all for this section.
+
+\begin{figure}[!htb]
+	\includegraphics{14c.png}
+	\caption{The final hypothesis h(g) after 14 iterations.}
+\end{figure}
+\newpage
+
+\subsection*{1.4d Run the Perceptron again with a data set size of 100 and compare results.}
+
+This time we ended up with 31 iterations and a much longer runtime to reach $h(g)$. It's looking like the runtimes get exponentially longer the more pieces of data introduced, as each entry may need to be re-checked for every iteration.
+
+\begin{lstlisting}[frame=single]
+p = Perceptron(100)
+p.pla(save=True)
+p.plot()
+\end{lstlisting}
+
+\begin{figure}[!htb]
+	\includegraphics{14d.png}
+	\caption{The final hypothesis $h(g)$ after 31 iterations.}
+\end{figure}
+\newpage
+
+\subsection*{1.4e Run the Perceptron again with data set size of 1000. Compare results}
+
+This section actually managed to freeze my computer after it had arrived at $h(g)$. It only required 49 iterations, but the runtime was significantly longer than any of the other experiments.
+
+\begin{lstlisting}[frame=single]
+p = Perceptron(1000)
+p.pla(save=True)
+p.plot()
+\end{lstlisting}
+
+\begin{figure}[!htb]
+	\includegraphics{14e.png}
+	\caption{The final hypothesis $h(g)$ after 49 iterations.}
+\end{figure}
+
+\end{document}
