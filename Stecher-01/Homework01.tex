@@ -131,4 +131,43 @@ p.plot()
 	\caption{The final hypothesis $h(g)$ after 49 iterations.}
 \end{figure}
 
+However, after running the Perceptron a second time without saving the plots, it ran for 44052 iterations, so it seems I just got lucky with the first run.
+
+\subsection*{1.4f Modify the algorithm to run in 10 dimensions rather than 2 and run the algorithm on a data set size of 1,000}
+
+For this problem, the algorithm only took 1830 iterations to converge.
+\newpage
+
+\subsection*{1.4g Run the same algorithm as f 100 times, plot a histogram for the number of iterations taken to converge.}
+
+To run the algorithm for this problem I added the following:
+
+\begin{lstlisting}[frame=single]
+for x in range(0, 100):
+	p = Perceptron(1000)
+	p.pla(save=False)
+
+p = Perceptron(1000)
+plt.hist(iterations)
+plt.title("10th Dimension Perceptron Iterations")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+
+fig = plt.gcf()
+
+plot_url = py.plot_mpl(fig, filename='Iterations')
+\end{lstlisting}
+
+I used an array called iterations to store the number of iterations each run of pla needed to converge, and then turned the array into a histogram using plotly.
+
+\begin{figure}[!htb]
+	\includegraphics[scale=0.75]{Iterations.png}
+	\caption{Histogram for problem 1.4g}
+\end{figure}
+\newpage
+
+\subsection*{1.4h Summarize your conclusions with respect to accuracy and running time as a function of $N$ and $d$.}
+
+I'm really not sure how to word this as a mathematical function, but it seems that as $N$ gets larger, the accuracy and runtime rise in accordance. The more data points introduced, the more iterations were necessary, but ultimately the hypothesis produced seemed to leave less room for error. Meanwhile by introducing more dimensions, we lessen our runtime by providing more possible "correct" answers that may leave a massively larger room for error, given that we are now extended into 10 dimensions rather than 2.
+
 \end{document}
