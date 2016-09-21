@@ -2,21 +2,24 @@ import numpy as np
 import random
 import os, subprocess
 import matplotlib.pyplot as plt
+import plotly.plotly as py
 
 
 class Perceptron:
 
     def __init__(self, N):
         # Random linearly separated data
-        xA,yA,xB,yB = [random.uniform(-1, 1) for i in range(4)]
-        self.V = np.array([xB*yA-xA*yB, yB-yA, xA-xB])
+        xA,yA,xB,yB,xC,yC,xD,yD,xE,yE,xF,yF,xG,yG,xH,yH,xI,yI,xJ,yJ = [random.uniform(-1, 1) for i in range(20)]
+	self.V = (np.random.rand(11)*2)-1
+        #self.V = np.array([xB*yA-xA*yB, yB-yA, xA-xB])
+	#self.V = np.array([0.25, 0.5, 0.75, 1])
         self.X = self.generate_points(N)
  
     def generate_points(self, N):
         X = []
         for i in range(N):
-            x1,x2 = [random.uniform(-1, 1) for i in range(2)]
-            x = np.array([1,x1,x2])
+            x1,x2,x3,x4,x5,x6,x7,x8,x9,x10 = [random.uniform(-1, 1) for i in range(10)]
+            x = np.array([1,x1,x2,x3,x4,x5,x6,x7,x8,x9,x10])
             s = int(np.sign(self.V.T.dot(x)))
             X.append((x, s))
         return X
@@ -70,10 +73,9 @@ class Perceptron:
  
     def pla(self, save=False):
         # Initialize the weigths to zeros
-        w = np.zeros(3)
+        w = np.zeros(11)
         X, N = self.X, len(self.X)
         it = 0
-	print it
         # Iterate until all points are correctly classified
         while self.classification_error(w) != 0:
             it += 1
@@ -88,19 +90,26 @@ class Perceptron:
                 plt.savefig('p_N%s_it%s' % (str(N),str(it)), \
                             dpi=200, bbox_inches='tight')
         self.w = w
+	print it
+	iterations.append(it)
+	
  
     def check_error(self, M, vec):
         check_pts = self.generate_points(M)
         return self.classification_error(vec, pts=check_pts)
 
+iterations = []
 
-p = Perceptron(20)
-p.plot()
-#random.seed(0):
-    #def main():
-#	it = 0
-#	for x in range(0, 100):
-#	p = Perceptron(20)
-#	it = p.pla(save=True)
-#	p.plot()
+for x in range(0, 100):
+	p = Perceptron(1000)
+	p.pla(save=False)
+
+plt.hist(iterations)
+plt.title("10th Dimension Perceptron Iterations")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+
+fig = plt.gcf()
+
+plot_url = py.plot_mpl(fig, filename='Iterations')
 
