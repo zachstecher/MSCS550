@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{listings}
+
+\title{Homework 02}
+\author{Zach Stecher}
+\date{Due: 9/27/16}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 2.1}
+\subsection*{2.1a)  For $M$ = 1, how many examples do we need to make \\ $\varepsilon$ $\leq$ 0.05?}
+
+\begin{equation*}
+\varepsilon(M, N, \delta) = \sqrt{\frac{1}{2N}ln\frac{2M}{\delta}}
+\end{equation*}
+
+By subbing the provided numbers into the above forumla, we can begin solving for $N$. First we'll plug in the numbers:
+
+\begin{equation*}
+\sqrt{\frac{1}{2N}ln\frac{2(1)}{0.03}} \leq 0.05
+\end{equation*}
+
+Then we math out the right side of the part of the forumla inside the square root:
+
+\begin{equation*}
+\sqrt{\frac{1}{2N} x 4.1999} \leq 0.05
+\end{equation*}
+
+Then we start to isolate the N. First we square both sides of the equation to remove the square root, resulting in:
+
+\begin{equation*}
+\frac{1}{2N} x 4.1999 \leq 0.0025
+\end{equation*}
+
+Then we move $\frac{1}{2N}$ to the other side and multiply by 2 to remove the fraction. Eventually we're left with:
+
+\begin{equation*}
+\frac{4.199}{0.005} \leq N
+\end{equation*}
+
+So we get $N$ $\geq$ $840$. We need at minimum 840 examples to achieve the desired error tolerance.
+
+\subsection*{2.1b)  For $M$ = 100, how many examples do we need to make \\ $\varepsilon$ $\leq$ 0.05?}
+
+Using the same equation and process, but subbing 100 in for $M$, we get the answer $N$ $\geq$ $1761$.
+
+\subsection*{2.1c)  For $M$ = 100, how many examples do we need to make \\ $\varepsilon$ $\leq$ 0.05?}
+
+Using the same equation and process, but subbing 1000 in for $M$, we get the answer $N$ $\geq$ $2683$.
+
+\section*{Problem 2.12  For an $H$ with $d_vc$ = 10, what sample size do you need to have a 95 percent confidence that your  generalization error is at most 0.05?}
+\begin{equation*}
+N \geq \frac{8}{\varepsilon^2} ln (\frac{4((2N)^{d_{vc}} + 1)}{\delta})
+\end{equation*}
+
+Because N exists on both sides of the above equation, we can use it to iteratively solve this problem. First, we plug in the correct numbers:
+
+\begin{equation*}
+N \geq \frac{8}{0.05^2} ln (\frac{4((2N)^{10} + 1)}{0.05})
+\end{equation*}
+
+Then we can begin iterating to find the answer. Let's start with N = 1,000.
+
+\begin{equation*}
+N \geq \frac{8}{0.05^2} ln (\frac{4((2 * 1000)^{10} + 1)}{0.05})
+\end{equation*}
+
+If we math this out, we get $N$ $\geq$ $257251.363936$. From here, we plug $257,251.363936$ in for N in the equation we just used and do it again, arriving at $361,170.64168$. Eventually the results start evening out just below $453,000$, so we can say that $N$ $\approx$ $453,000$.
+
+\end{document}
