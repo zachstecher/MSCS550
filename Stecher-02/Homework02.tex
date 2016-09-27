@@ -52,6 +52,30 @@ Using the same equation and process, but subbing 100 in for $M$, we get the answ
 
 Using the same equation and process, but subbing 1000 in for $M$, we get the answer $N$ $\geq$ $2683$.
 
+\section*{Problem 2.11  Suppose $m_H$$(N)$ $=$ $N$ + $1$, so $d_{vc}$ $=$ $1$. With 100 training examples, give a bound for $E_{out}$ with confidence 90 percent. Repeat for $n$ $=$ $10,000$.}
+
+\begin{equation*}
+E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{8}{2N} ln \frac{4m_h(N)}{\delta}}
+\end{equation*}
+
+By plugging the provided numbers into the equation, we get this (simplified):
+
+\begin{equation*}
+\sqrt{\frac{8}{100} ln \frac{804}{0.1}}
+\end{equation*}
+
+By mathing this out, we get the bound (rounded up to the nearest hundreth):
+
+\begin{equation*}
+E_{out}(g) \leq E_{in}(g) + 0.85.
+\end{equation*}
+
+Repeating for $N$ $=$ $10,000$ we get:
+
+\begin{equation*}
+E_{out}(g) \leq E_{in}(g) + 0.14
+\end{equation*}
+
 \section*{Problem 2.12  For an $H$ with $d_vc$ = 10, what sample size do you need to have a 95 percent confidence that your  generalization error is at most 0.05?}
 \begin{equation*}
 N \geq \frac{8}{\varepsilon^2} ln (\frac{4((2N)^{d_{vc}} + 1)}{\delta})
