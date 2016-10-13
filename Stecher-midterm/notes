@@ -1,0 +1,11 @@
+The pocket algorithm starting at 0 in general managed to find a final E_out of around 12-14% after 1000 iterations.
+This took a considerable amount of computational time and power.
+
+Meanwhile, linear regression found it's answer immediately, but was often completely wrong about it's classifications.
+It managed to find a halfway decent slope, but the line's actual placement was way off.
+
+Interestingly, even after increasing the iterations to 3000 the pocket algorithm still converged around a 12% E_out.
+
+By starting the Pocket algorithm at the answer that Linear Regression arrived at, it took less pocket updates, and thus
+less computational power, to arrive at the lowest E_out, though not by much. Also, the E_out value still converged
+around 12%.
