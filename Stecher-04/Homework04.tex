@@ -17,6 +17,9 @@ The only modification I needed to make to the provided code was to change the va
 
 For this problem, I wrapped the code used in problem 1 inside a for loop to run 100 times, only generating the data once at the start. I also added in an array named bestklist to save each k-neighbors value that the regressor determined to be the best for each iteration. Curiously, this resulted in the same k values being chosen for every single iteration of the experiment. For example I ran it and got the k value results 216, 208, and 214 in Problem 1, and my histogram was an even split of 100 occurrences of each value. My thoughts are that this algorithm is designed to always come to the same conclusion if run through the same data.
 
-\includegraphics{kneighhistogram.png}
+\begin{figure}[!htb]
+	\includegraphics[width=\linewidth]{kneighhistogram.png}
+	\caption{Histogram for k-neighbor results.}
+\end{figure}
 
 \end{document}
