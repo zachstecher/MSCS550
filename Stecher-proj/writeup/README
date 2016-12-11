@@ -1,0 +1,5 @@
+Contains all the files for Zach Stecher's final project submission.
+
+RandomForest.py is the latest update to RandomForest containing all new additions and modifications
+ClassifierComparison.py is the initial python code to compare 10 different classifiers
+RandomForestFresh.py is the python code that produces the best Kaggle submission score
